@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimeWatch Social</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Fixed Navigation -->
+    <nav class="bg-blue-600 text-white p-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <h1 class="text-2xl font-bold">CrimeWatch</h1>
+                <div class="relative">
+                    <input type="search" 
+                           placeholder="Search reports..." 
+                           class="bg-gray-100 text-gray-900 rounded-full py-2 px-4 pl-10 w-64 focus:outline-none focus:ring-2 focus:ring-white">
+                    <svg class="w-5 h-5 text-gray-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <button id="loginBtn" class="px-4 py-2 bg-blue-500 rounded hover:bg-blue-700">Login</button>
+                <button id="registerBtn" class="px-4 py-2 bg-green-500 rounded hover:bg-green-700">Register</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-20 p-4 flex gap-4">
+        <!-- Left Sidebar -->
+        <aside class="w-1/4 fixed left-0 top-20 p-4 h-screen overflow-y-auto hidden lg:block">
+            <div class="bg-white rounded-lg shadow p-4 space-y-4">
+                <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span class="font-medium">Home</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                    </svg>
+                    <span class="font-medium">My Reports</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <span class="font-medium">Communities</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                    </svg>
+                    <span class="font-medium">Notifications</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <div class="lg:w-1/2 lg:ml-[25%] w-full space-y-4">
+            <!-- Create Post -->
+            <div class="bg-white rounded-lg shadow p-4">
+                <div class="flex gap-4 items-center">
+                    <img src="https://api.dicebear.com/7.x/initials/svg?seed=JD" alt="Profile" class="w-10 h-10 rounded-full">
+                    <button class="bg-gray-100 hover:bg-gray-200 rounded-full py-2.5 px-4 text-gray-500 w-full text-left">
+                        Report a crime in your area...
+                    </button>
+                </div>
+                <div class="flex gap-4 mt-4 pt-4 border-t">
+                    <button class="flex items-center gap-2 text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-lg flex-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        Photo/Video
+                    </button>
+                    <button class="flex items-center gap-2 text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-lg flex-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Location
+                    </button>
+                </div>
+            </div>
+
+            <!-- Crime Reports Feed -->
+            <div id="crimeFeed" class="space-y-4">
+                <!-- Sample Crime Report 1 -->
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-4">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=JS" alt="Profile" class="w-10 h-10 rounded-full">
+                            <div>
+                                <h3 class="font-semibold">John Smith</h3>
+                                <p class="text-sm text-gray-500">Dhaka, Bangladesh • 2 hours ago</p>
+                            </div>
+                        </div>
+                        <h2 class="text-xl font-semibold mb-2">Suspicious Activity Reported</h2>
+                        <p class="text-gray-600 mb-4">
+                            Witnessed suspicious individuals lurking around parked vehicles near Gulshan 2. Please be vigilant and ensure your vehicles are properly secured.
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1517436073-3b3ee1ee4544?w=800" alt="Crime Scene" class="w-full rounded-lg mb-4">
+                        <div class="flex gap-4 text-gray-500">
+                            <button class="flex items-center gap-2 hover:text-blue-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                                </svg>
+                                245
+                            </button>
+                            <button class="flex items-center gap-2 hover:text-red-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 11v-9m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"/>
+                                </svg>
+                                32
+                            </button>
+                            <button class="flex items-center gap-2 hover:text-green-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                                </svg>
+                                89
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Comments Section -->
+                    <div class="border-t p-4 space-y-4">
+                        <div class="flex gap-3">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=AB" alt="Profile" class="w-8 h-8 rounded-full">
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-lg p-3">
+                                    <p class="font-semibold">Alice Brown</p>
+                                    <p class="text-gray-600">I saw them too! They were wearing dark hoodies and seemed to be checking car doors.</p>
+                                </div>
+                                <div class="flex gap-4 mt-2 text-sm text-gray-500">
+                                    <button class="hover:text-blue-600">Like</button>
+                                    <button class="hover:text-blue-600">Reply</button>
+                                    <span>1h ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Crime Report 2 -->
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-4">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://api.dicebear.com/7.x/initials/svg?seed=MP" alt="Profile" class="w-10 h-10 rounded-full">
+                            <div>
+                                <h3 class="font-semibold">Maria Patel</h3>
+                                <p class="text-sm text-gray-500">Chittagong • 5 hours ago</p>
+                            </div>
+                        </div>
+                        <h2 class="text-xl font-semibold mb-2">Phone Snatching Incident</h2>
+                        <p class="text-gray-600 mb-4">
+                            A phone snatching incident occurred near GEC Circle today around 3 PM. Two individuals on a motorcycle were involved. Please be careful while using phones in public.
+                        </p>
+                        <img src="https://images.unsplash.com/photo-1517436073-3b3ee1ee4544?w=800" alt="Crime Scene" class="w-full rounded-lg mb-4">
+                        <div class="flex gap-4 text-gray-500">
+                            <button class="flex items-center gap-2 hover:text-blue-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                                </svg>
+                                178
+                            </button>
+                            <button class="flex items-center gap-2 hover:text-red-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 11v-9m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"/>
+                                </svg>
+                                15
+                            </button>
+                            <button class="flex items-center gap-2 hover:text-green-600">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                                </svg>
+                                56
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="w-1/4 fixed right-0 top-20 p-4 h-screen overflow-y-auto hidden lg:block">
+            <div class="bg-white rounded-lg shadow p-4 mb-4">
+                <h2 class="font-semibold text-lg mb-4">Crime Statistics</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500">Today's Reports</h3>
+                        <p class="text-2xl font-bold text-blue-600">24</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500">This Week</h3>
+                        <p class="text-2xl font-bold text-blue-600">156</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-500">Most Reported Area</h3>
+                        <p class="text-lg font-semibold">Gulshan, Dhaka</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="font-semibold text-lg mb-4">Active Communities</h2>
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-lg">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium">Dhaka Safety Network</p>
+                            <p class="text-sm text-gray-500">15.2k members</p>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-lg">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium">Chittagong Alert</p>
+                            <p class="text-sm text-gray-500">8.7k members</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Include all the existing modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg w-96">
+            <h2 class="text-2xl font-bold mb-4">Login</h2>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div class="flex justify-between text-sm">
+                    <button type="button" id="forgotPasswordBtn" class="text-blue-600 hover:text-blue-800">Forgot Password?</button>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Login</button>
+            </form>
+            <button class="modal-close mt-4 text-sm text-gray-600 hover:text-gray-800">Close</button>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg w-96">
+            <h2 class="text-2xl font-bold mb-4">Register</h2>
+            <form id="registerForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="tel" name="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" name="confirm_password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Register</button>
+            </form>
+            <button class="modal-close mt-4 text-sm text-gray-600 hover:text-gray-800">Close</button>
+        </div>
+    </div>
+
+    <!-- Keep all other existing modals -->
+
+    <script src="js/main.js"></script>
+</body>
+</html>
